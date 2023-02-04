@@ -30,6 +30,7 @@ const Login = () => {
      if (!data.success) {
        alert("Enter Valid Credentials");
      } else {
+       window.localStorage.setItem("userEmail",credentials.email);
        window.localStorage.setItem("token", "json.token");
        navigate('/')
      }

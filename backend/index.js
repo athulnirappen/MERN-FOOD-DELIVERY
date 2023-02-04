@@ -4,6 +4,8 @@ const port = 5000;
 const connectDb = require("./db")
 const userRoutes = require("./routes/UserRoutes")
 const cors = require("cors");
+const Displaydata = require("./routes/Displaydata");
+const OrderRoutes=require('./routes/Orderdata')
 
 
 
@@ -22,7 +24,9 @@ app.get('/', (req, res) => {
 })
 
 app.use(express.json())
-app.use('/api',userRoutes)
+app.use('/api', userRoutes)
+app.use("/api", Displaydata);
+app.use("/api", OrderRoutes);
 
 
 
